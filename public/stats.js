@@ -34,6 +34,7 @@ API.getWorkoutsInRange()
   return arr;
   }
 function populateChart(data) {
+  console.log('pub stats populateChart');
   let durations = duration(data);
   let pounds = calculateTotalWeight(data);
   let workouts = workoutNames(data);
@@ -187,6 +188,7 @@ function populateChart(data) {
 }
 
 function duration(data) {
+  console.log('pub stats duration');
   let durations = [];
 
   data.forEach(workout => {
@@ -199,6 +201,7 @@ function duration(data) {
 }
 
 function calculateTotalWeight(data) {
+  console.log('pub stats calculateTotalWeight');
   let total = [];
 
   data.forEach(workout => {
@@ -211,6 +214,7 @@ function calculateTotalWeight(data) {
 }
 
 function workoutNames(data) {
+  console.log('pub stats workoutNames');
   let workouts = [];
 
   data.forEach(workout => {

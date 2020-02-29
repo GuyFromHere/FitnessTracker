@@ -20,6 +20,7 @@ let shouldNavigateAway = false;
 init();
 
 async function init() {
+  console.log('pub index init');
   if (location.search.split("=")[1] === undefined) {
     const workout = await API.getLastWorkout();
     if(workout) {
@@ -32,6 +33,7 @@ async function init() {
 }
 
 function handleWorkoutTypeChange(event) {
+  console.log('pub index handeWorkoutTypeChange');
   workoutType = event.target.value;
 
   if (workoutType === "cardio") {
@@ -49,6 +51,7 @@ function handleWorkoutTypeChange(event) {
 }
 
 function validateInputs() {
+  console.log('pub index validateInputs');
   let isValid = true;
 
   if (workoutType === "resistance") {
@@ -95,6 +98,7 @@ function validateInputs() {
 }
 
 async function handleFormSubmit(event) {
+  console.log('pub index handleFormSubmit');
   event.preventDefault();
 
   let workoutData = {};
