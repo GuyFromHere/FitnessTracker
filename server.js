@@ -5,7 +5,7 @@ const path = require('path');
 
 const PORT = process.env.PORT || 3000;
 
-const Workout = require("./models/workout.js");
+// connect to database
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { useNewUrlParser: true });
 
 const app = express();

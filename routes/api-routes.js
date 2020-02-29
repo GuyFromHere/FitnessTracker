@@ -4,7 +4,7 @@ const db = require("../models");
 module.exports = app => {
   // ROUTES
   app.get("/api/workouts/", (req, res) => {
-    console.log('api-routes get /api/workouts')
+    console.log('api routes get /api/workouts/');
     db.Workout.find({})
       //.sort({ date: -1 })
       .then(dbWorkout => {
@@ -16,7 +16,7 @@ module.exports = app => {
   });
 
   app.get("/api/workouts/range", (req, res) => {
-    console.log('api-routes get /api/workouts')
+    console.log('api routes get /api/workouts/range');
     db.Workout.find({})
     .then(dbWorkout => {
       res.json(dbWorkout);
@@ -27,7 +27,7 @@ module.exports = app => {
   })
 
   app.put('/api/workouts/:id', (req, res) => {
-    console.log('api-routes put /api/workouts/:id')
+    console.log('api routes put /api/workouts/:id');
     console.log(req.body);
     db.Workout.updateOne(
       { _id: req.params.id }, 
@@ -39,8 +39,8 @@ module.exports = app => {
   })
 
   app.post('/api/workouts/', ({body}, res) => {
-    console.log('serverjs post /api/workouts body:');
-    console.log(body)
+    console.log('api routes post /api/workouts');
+    console.log({body});
     db.Workout.create({body}).then(dbWorkout => {
       res.json(dbWorkout);
     }).catch(err => {
