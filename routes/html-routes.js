@@ -1,4 +1,15 @@
+const path = require('path');
 
-app.get("/exercise", (req, res) => {
-    res.sendFile("./exercise.html");
-})
+module.exports = app => {
+// HTML ROUTES
+  app.get("/exercise", (req, res) => {
+    console.log('serverjs get /exercise');
+    res.sendFile(path.join(__dirname, "../public/exercise.html"));
+  })
+  
+  app.get("/stats", (req, res) => {
+    console.log('serverjs get /stats');
+    res.sendFile(path.join(__dirname, "../public/stats.html"));
+  })
+  
+}
