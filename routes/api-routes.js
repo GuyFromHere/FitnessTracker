@@ -2,11 +2,8 @@
 const db = require("../models");
 
 module.exports = app => {
-  // ROUTES
   app.get("/api/workouts/", (req, res) => {
-    console.log('api routes get /api/workouts/');
     db.Workout.find({})
-      //.sort({ date: -1 })
       .then(dbWorkout => {
         res.json(dbWorkout);
       })
@@ -16,7 +13,6 @@ module.exports = app => {
   });
 
   app.get("/api/workouts/range", (req, res) => {
-    console.log('api routes get /api/workouts/range');
     db.Workout.find({})
     .then(dbWorkout => {
       res.json(dbWorkout);
@@ -27,21 +23,20 @@ module.exports = app => {
   })
 
   app.put('/api/workouts/:id', (req, res) => {
-    console.log('api routes put /api/workouts/:id');
-    console.log(req.body);
-    db.Workout.updateOne(
-      { _id: req.params.id }, 
-      {exercises: req.body}).then(dbWorkout => {
+    db.Workout.findByIdAndUpdate({ _id: req.params.id }, { $push: { exercises: req.body } })
+    .then(dbWorkout => {
       res.json(dbWorkout);
-    }).catch(err => {
-      res.status(400).json(err);
+    })
+    .catch(err => {
+      console.log(err);
     });
-  })
 
-  app.post('/api/workouts/', ({body}, res) => {
-    console.log('api routes post /api/workouts');
-    console.log({body});
-    db.Workout.create({body}).then(dbWorkout => {
+  });
+
+  // Called by api's createWorkout function
+  app.post('/api/workouts/', (req, res) => {
+    db.Workout.create({})
+    .then(dbWorkout => {
       res.json(dbWorkout);
     }).catch(err => {
       res.status(400).json(err);

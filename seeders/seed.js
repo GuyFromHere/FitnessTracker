@@ -6,7 +6,7 @@ mongoose.connect("mongodb://localhost/workout", {
   useFindAndModify: false
 });
 
-let workoutSeed = [
+/* let workoutSeed = [
   {
     day: new Date().setDate(new Date().getDate()-10),
     exercises: [
@@ -130,6 +130,64 @@ let workoutSeed = [
         name: "Bench",
         duration: 30,
         distance: 2
+      }
+    ]
+  }
+]; */
+
+let workoutSeed = [
+  {
+    day: new Date().setDate(new Date().getDate()-7),
+    exercises: [
+      {
+        type: "cardio",
+        name: "Running",
+        duration: 34.5,
+        distance: 4.06
+      }
+    ]
+  },
+  {
+    day: new Date().setDate(new Date().getDate()-6),
+    exercises: [
+      {
+        type: "cardio",
+        name: "Running",
+        duration: 110,
+        distance: 14.01
+      }
+    ]
+  },
+  {
+    day: new Date().setDate(new Date().getDate()-3),
+    exercises: [
+      {
+        type: "cardio",
+        name: "Running",
+        duration: 40,
+        distance: 5.31
+      }
+    ]
+  },
+  {
+    day: new Date().setDate(new Date().getDate()-2),
+    exercises: [
+      {
+        type: "cardio",
+        name: "Running",
+        duration: 60,
+        distance: 8.07
+      }
+    ]
+  },
+  {
+    day: new Date().setDate(new Date().getDate()-1),
+    exercises: [
+      {
+        type: "cardio",
+        name: "Running",
+        duration: 47,
+        distance: 5.77
       }
     ]
   }
