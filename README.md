@@ -14,9 +14,9 @@ Click New Workout and select an exercise type.
 
 Fill in information about the exercise and click Add Exercise to add it to the day's workout. 
 
-![Adding an exercise](../../public/images/add.png)
+![Adding an exercise](https://github.com/GuyFromHere/FitnessTracker/blob/master/public/images/add.png)
 
 When you are done adding exercises for the day, click Complete to view your Workout Dashboard.
 
-![Workout Dashboard](../../public/images/dash.png)
+![Workout Dashboard](https://github.com/GuyFromHere/FitnessTracker/blob/master/public/images/dash.png)
 
