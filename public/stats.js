@@ -36,6 +36,7 @@ function populateChart(data) {
   let durations = duration(data);
   let pounds = calculateTotalWeight(data);
   let workouts = workoutNames(data);
+  console.log(workouts);
   const colors = generatePalette();
 
   let line = document.querySelector("#canvas").getContext("2d");
@@ -194,6 +195,7 @@ function duration(data) {
       durations.push(exercise.duration);
     });
   });
+  console.log(durations);
   return durations;
 }
 
@@ -210,7 +212,6 @@ function calculateTotalWeight(data) {
 }
 
 function workoutNames(data) {
-  
   let workouts = [];
 
   data.forEach(workout => {

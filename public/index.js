@@ -114,7 +114,6 @@ async function handleFormSubmit(event) {
   }
   await API.addExercise(workoutData);
   clearInputs();
-  toast.classList.add("success");
 }
 
 function handleToastAnimationEnd() {
@@ -140,8 +139,12 @@ if(workoutTypeSelect) {
 }
 if(completeButton) {
   completeButton.addEventListener("click", function(event) {
-    shouldNavigateAway = true;
-    handleFormSubmit(event);
+    event.preventDefault();
+    //shouldNavigateAway = true;
+    //handleFormSubmit(event);
+    //clearInputs();
+    //toast.classList.add("success");
+    location.href = "/exercise";
   });
 }
 if(addButton) {
