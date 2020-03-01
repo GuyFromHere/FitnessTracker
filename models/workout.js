@@ -1,3 +1,4 @@
+const connectDb = require('../models/db/connection');
 const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;

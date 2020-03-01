@@ -140,11 +140,11 @@ if(workoutTypeSelect) {
 if(completeButton) {
   completeButton.addEventListener("click", function(event) {
     event.preventDefault();
-    //shouldNavigateAway = true;
-    //handleFormSubmit(event);
-    //clearInputs();
-    //toast.classList.add("success");
-    location.href = "/exercise";
+    /* shouldNavigateAway = true;
+    handleFormSubmit(event);
+    clearInputs();
+    toast.classList.add("success"); */
+    location.href = "/stats";
   });
 }
 if(addButton) {
