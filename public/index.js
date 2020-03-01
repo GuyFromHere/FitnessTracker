@@ -132,6 +132,9 @@ function clearInputs() {
   repsInput.value = "";
   resistanceDurationInput.value = "";
   weightInput.value = "";
+  // disable buttons after sending workout
+  completeButton.setAttribute("disabled", true);
+  addButton.setAttribute("disabled", true);
 }
 
 if(workoutTypeSelect) {
@@ -139,12 +142,10 @@ if(workoutTypeSelect) {
 }
 if(completeButton) {
   completeButton.addEventListener("click", function(event) {
-    event.preventDefault();
-    /* shouldNavigateAway = true;
+    shouldNavigateAway = true;
     handleFormSubmit(event);
     clearInputs();
-    toast.classList.add("success"); */
-    location.href = "/stats";
+    toast.classList.add("success");
   });
 }
 if(addButton) {

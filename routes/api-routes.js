@@ -12,7 +12,9 @@ module.exports = app => {
   });
 
   app.get("/api/workouts/range", (req, res) => {
-    db.Workout.find({})
+    db.Workout.find({}, (err, data) => {
+      if (err) throw err;
+    })
     .then(dbWorkout => {
       res.json(dbWorkout);
     })
@@ -22,6 +24,8 @@ module.exports = app => {
   })
 
   app.put('/api/workouts/:id', (req, res) => {
+    console.log('api route workouts:id');
+    console.log(req.params.id)
     db.Workout.findByIdAndUpdate({ _id: req.params.id }, { $push: { exercises: req.body } })
     .then(dbWorkout => {
       res.json(dbWorkout);
