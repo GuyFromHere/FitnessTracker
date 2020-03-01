@@ -4,9 +4,11 @@ const mongoose = require('mongoose');
 // Database variables
 const dbName = 'workout';
 const dbPort = '27017';
+const userName = process.env.DBUSER; 
+const password = process.env.DBPASSWORD; 
 //
 // Connection string
-const connectionString = 'mongodb+srv://tester:Hamburger5@tutorialcluster0-ypszl.mongodb.net/'+dbName;
+const connectionString = `mongodb+srv://${userName}:${password}@pubgithub-aqd38.mongodb.net/${dbName}`
 const mongoOptions = {
     useNewUrlParser: true,
     useFindAndModify: false
